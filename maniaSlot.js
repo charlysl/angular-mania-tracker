@@ -3,9 +3,10 @@
 
 var ManiaSlotController = function () {
     var ctrl = this;
+    ctrl.slotIcon = slotIcon;
 
-    ctrl.slotIcon = function () {
-        switch (this.slot.state) {
+    function slotIcon () {
+        switch (ctrl.slot.state) {
             case "empty":
                 return "battery-empty";
             case "unbound":
@@ -17,6 +18,8 @@ var ManiaSlotController = function () {
         }
     }
 }
+
+ManiaSlotController.$inject = [ '$scope' ];
 
 angular.module('app').component('maniaSlot', {
     templateUrl: 'maniaSlot.html',

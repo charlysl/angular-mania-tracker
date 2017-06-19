@@ -1,5 +1,5 @@
-<ul id='mania-pool'>
-  <li ng-repeat="slot in $ctrl.slots">
+<ul>
+  <li ng-repeat="slot in $ctrl.slots" ng-class="{selected: slot.selected}" ng-click="$ctrl.select(slot)">
       <mania-slot slot="slot"></mania-slot>
   </li>
 </ul>
