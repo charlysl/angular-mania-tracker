@@ -8,7 +8,7 @@ var ManiaSlotController = function () {
     function slotIcon () {
         switch (ctrl.slot.state) {
             case "empty":
-                return "battery-empty";
+                return "battery-quarter";
             case "unbound":
                 return "bolt";
             case "bound":
