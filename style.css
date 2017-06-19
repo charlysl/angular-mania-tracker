@@ -7,8 +7,7 @@ ul li {
   width: 30px;
   text-align: center;
   line-height: 0;
-  border: black solid 1px;
 }
-ul li mania-slot {
-  border: black solid 1px;
+ul .selected {
+  background-color: LightBlue;
 }
