@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+}
+ul li {
+  display: inline-block;
+  margin-left: 4px;
+  width: 30px;
+  text-align: center;
+  line-height: 0;
+  border: black solid 1px;
+}
+ul li mania-slot {
+  border: black solid 1px;
+}
