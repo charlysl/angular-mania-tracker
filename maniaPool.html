@@ -1,8 +1,13 @@
-<ul>
-  <li ng-repeat="slot in $ctrl.slots" ng-class="{selected: slot.selected}" ng-click="$ctrl.select(slot)">
-      <mania-slot slot="slot"></mania-slot>
-  </li>
-</ul>
-<button ng-click="$ctrl.spend($ctrl.slots)">Spend</button>
-<button ng-click="$ctrl.bind($ctrl.slots)">Bind</button>
-<button ng-click="$ctrl.regain($ctrl.slots)">Regain</button>
+<button class="btn-catalyze" ng-class="{vanished: $ctrl.catalyzed}" ng-click="$ctrl.catalyze()">CATALYZE</button>
+
+<div ng-class="{vanished: !$ctrl.catalyzed}">
+  <ul>
+    <li ng-repeat="slot in $ctrl.slots" ng-class="{selected: slot.selected}" ng-click="$ctrl.select(slot)">
+        <mania-slot slot="slot"></mania-slot>
+    </li>
+  </ul>
+  <button ng-click="$ctrl.spend($ctrl.slots)">Spend</button>
+  <button ng-click="$ctrl.bind($ctrl.slots)">Bind</button>
+  <button ng-click="$ctrl.regain($ctrl.slots)">Regain</button>
+  <button ng-click="$ctrl.clearSelection()">Clear Selection</button>
+</div>

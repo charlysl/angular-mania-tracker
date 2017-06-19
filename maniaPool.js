@@ -4,20 +4,33 @@
 var ManiaPoolController = function () {
     var ctrl = this;
     ctrl.slots = [];
-    ctrl.getSlots = getSlots;
+    ctrl.catalyze = catalyze;
+    ctrl.catalyzed = false;
+    ctrl.createSlots = createSlots;
     ctrl.select = select;
     ctrl.spend = spend;
     ctrl.bind = bind;
     ctrl.regain = regain;
+    ctrl.clearSelection = clearSelection;
 
-    activate();
+    function catalyze () {
+        _(10).times(function () {
+            ctrl.slots.push({
+                state: 'unbound'
+            });
+        });
+
+        ctrl.catalyzed = true;
+    }
+
+    // activate();
 
     function activate () {
-        ctrl.slots = getSlots();
+        ctrl.slots = createSlots();
     };
 
     // load this from the database eventually
-    function getSlots () {
+    function createSlots () {
         return [
             {
                 state: 'empty'
@@ -66,6 +79,10 @@ var ManiaPoolController = function () {
     function regain (slots) {
         slots.filter(slot => slot.selected)
              .map(slot => slot.state = "unbound");
+    }
+
+    function clearSelection () {
+        ctrl.slots.map(slot => slot.selected = false);
     }
 };
 

@@ -1,5 +1,9 @@
+.btn-catalyze {
+  font-size: 40px;
+}
 ul {
   list-style: none;
+  padding-left: 0;
 }
 ul li {
   display: inline-block;
@@ -10,4 +14,7 @@ ul li {
 }
 ul .selected {
   background-color: LightBlue;
+}
+.vanished {
+  display: none;
 }

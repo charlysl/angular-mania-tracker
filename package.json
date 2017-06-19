@@ -2,6 +2,9 @@
   "name": "angular-mania-tracker",
   "version": "1.0.0",
   "description": "a mania tracker",
+  "dependencies": {
+    "underscore": "1.8.3"
+  },
   "devDependencies": {
     "less": "2.7.2"
   },
