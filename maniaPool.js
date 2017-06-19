@@ -6,6 +6,9 @@ var ManiaPoolController = function () {
     ctrl.slots = [];
     ctrl.getSlots = getSlots;
     ctrl.select = select;
+    ctrl.spend = spend;
+    ctrl.bind = bind;
+    ctrl.regain = regain;
 
     activate();
 
@@ -49,6 +52,22 @@ var ManiaPoolController = function () {
     function select (slot) {
         slot.selected = !slot.selected;
     }
+
+    function spend (slots) {
+        slots.filter(slot => slot.selected)
+             .map(slot => slot.state = "empty");
+    }
+
+    function bind (slots) {
+        slots.filter(slot => slot.selected)
+             .map(slot => slot.state = "bound");
+    }
+
+    function regain (slots) {
+        slots.filter(slot => slot.selected)
+             .map(slot => slot.state = "unbound");
+    }
+};
 
 ManiaPoolController.$inject = [ '$scope' ];
 
